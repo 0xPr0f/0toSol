@@ -3,7 +3,7 @@ pragma solidity ^0.8;
 // custom error
 
 contract VendingMachine {
-    address payable owner = payable(msg.sender);
+    address payable public owner = payable(msg.sender);
     /// @notice custom error e.g error Unauthorized(); must not be decleared in the contract
     /// @notice custom error e.g error Unauthorized() when decleared outside a contract can be imported into other contracts
     error Unauthorized(string error);
@@ -18,7 +18,7 @@ contract VendingMachine {
 error InsufficientBalance(uint256 available, uint256 required);
 
 contract TestToken {
-    mapping(address => uint) balance;
+    mapping(address => uint) public balance;
     function transfer(address to, uint256 amount) public {
         if (amount > balance[msg.sender])
             revert InsufficientBalance({
