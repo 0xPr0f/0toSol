@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.10;
-
+// @notice This is the new version of create2, same as create2A
 contract Car {
     address public owner;
     string public model;
