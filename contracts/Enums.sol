@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.10;
+pragma solidity 0.8.12;
 
 contract Enum {
     // Enum representing shipping status
@@ -45,5 +45,5 @@ contract Enum {
 
 import "./EnumDeclaration.sol";
 contract Enums {
-    Status public status;
+    Statuss public status;
 }

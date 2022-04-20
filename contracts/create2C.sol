@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.10;
+pragma solidity 0.8.12;
 // @notice This is the olders version of create2
 contract Factory {
     // Returns the address of the newly deployed contract

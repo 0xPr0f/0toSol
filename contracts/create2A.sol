@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8;
+pragma solidity 0.8.12;
 //@notice Salted contract creations / create2
 contract D {
     uint public x;
