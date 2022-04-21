@@ -9,7 +9,6 @@ contract TimeLock {
     error TimestampNotPassedError(uint blockTimestmap, uint timestamp);
     error TimestampExpiredError(uint blockTimestamp, uint expiresAt);
     error TxFailedError();
-
     event Queue(
         bytes32 indexed txId,
         address indexed target,
@@ -46,7 +45,7 @@ contract TimeLock {
         }
         _;
     }
-
+/// @notice lol
     receive() external payable {}
 
     function getTxId(
@@ -73,6 +72,7 @@ contract TimeLock {
         bytes calldata _data,
         uint _timestamp
     ) external onlyOwner returns (bytes32 txId) {
+
         txId = getTxId(_target, _value, _func, _data, _timestamp);
         if (queued[txId]) {
             revert AlreadyQueuedError(txId);
@@ -122,7 +122,6 @@ contract TimeLock {
             // call fallback with data
             data = _data;
         }
-
         // call target
         (bool ok, bytes memory res) = _target.call{value: _value}(data);
         if (!ok) {
